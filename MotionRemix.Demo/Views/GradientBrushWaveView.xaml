@@ -1,0 +1,55 @@
+﻿<UserControl 
+    x:Class="MotionRemix.Demo.Views.GradientBrushWaveView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:motionRemix="http://schemas.montion.remix/2014/xaml"
+    mc:Ignorable="d" 
+    d:DesignHeight="300" 
+    d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/Resources.xaml" />
+    </UserControl.Resources>
+
+    <Grid 
+        x:Name="LayoutRoot"
+        Background="{StaticResource MainColorBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Rectangle 
+            x:Name="GradientBrushWaveRectangle" 
+            Grid.Row="1" 
+            Height="35"
+            Width="240"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" 
+            Margin="4, 4, 4, 4" 
+            Fill="{StaticResource AnimationGradientWaveBrush}">
+            <Rectangle.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <motionRemix:GradientBrushWaveAnimation 
+                                Storyboard.TargetName="GradientBrushWaveRectangle" 
+                                Storyboard.TargetProperty="Fill" 
+                                Repeat="3"
+                                Duration="0:0:2" 
+                                BeginTime="0:0:0">
+                                <motionRemix:GradientBrushWaveAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut" />
+                                </motionRemix:GradientBrushWaveAnimation.EasingFunction>
+                            </motionRemix:GradientBrushWaveAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
+
+    </Grid>
+</UserControl>

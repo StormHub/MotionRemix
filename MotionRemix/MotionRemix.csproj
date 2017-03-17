@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46B8D710-117B-4D7C-8574-C2B98DE1A8F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MotionRemix</RootNamespace>
+    <AssemblyName>MotionRemix</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Animations\CubicBezierEase.cs" />
+    <Compile Include="Animations\GradientBrushAnimationBase.cs" />
+    <Compile Include="Animations\GradientBrushOffsetAnimation.cs" />
+    <Compile Include="Animations\ColorAnimationUsingHsb.cs" />
+    <Compile Include="Animations\GradientBrushFlowAnimation.cs" />
+    <Compile Include="Animations\GradientBrushWaveAnimation.cs" />
+    <Compile Include="Animations\QuadraticBezierEase.cs" />
+    <Compile Include="Common\MediaExtensions.cs" />
+    <Compile Include="Common\GeometryExtensions.cs" />
+    <Compile Include="Common\HsbColor.cs" />
+    <Compile Include="Common\MathExtensions.cs" />
+    <Compile Include="Common\RandomExtension.cs" />
+    <Compile Include="Common\VisualElementExtension.cs" />
+    <Compile Include="Controls\ActiveTileList.cs" />
+    <Compile Include="Converters\BooleanConverter.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter .cs" />
+    <Compile Include="Graphics\BezierBuilder.cs" />
+    <Compile Include="Graphics\BezierExtensions.cs" />
+    <Compile Include="Graphics\Bezier.cs" />
+    <Compile Include="Graphics\VectorPair.cs" />
+    <Compile Include="Panels\Primitives\ActiveTilePanel.cs" />
+    <Compile Include="Panels\Primitives\AnimationPanel .cs" />
+    <Compile Include="Panels\Primitives\CompositionTargetRenderingListener .cs" />
+    <Compile Include="Panels\Primitives\TileDecorator.cs" />
+    <Compile Include="Panels\Primitives\TileWrapPanel .cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shapes\Spiral.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
